@@ -1,0 +1,135 @@
+.signature {
+  color: blue;
+  font-size: 25px;
+}
+
+#current {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+}
+body {
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+}
+
+.weatherapp {
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 10px;
+  border: 1px solid #dadde1;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+form {
+  margin: 40px auto 2px;
+}
+
+.searchBar {
+  margin-left: 25%;
+  margin-right: 0;
+}
+.Go {
+  margin-right: 28%;
+  margin-left: 0;
+  padding: 0;
+}
+
+input[type="submit" i] {
+  border: 1px solid #ced4da;
+  font-size: 22px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#cityName {
+  font-size: 60px;
+  margin: auto;
+}
+
+.weatheremoji {
+  font-size: 50px;
+  margin: auto;
+}
+
+.futureWeatherForecast {
+  font-size: 30px;
+}
+
+.UmbrellaOrNot {
+  font-size: 25px;
+  padding: 20px 0px 0px 0px;
+}
+
+.justify-content-center {
+  text-align: center;
+  margin: 25px auto;
+  line-height: 35px;
+  font-weight: 400;
+}
+
+#today,
+#time {
+  font-size: 25px;
+}
+
+#temp {
+  font-size: 40px;
+}
+
+.first:hover {
+  transform: scale(1.5);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 30px;
+}
+
+.second:hover {
+  transform: scale(1.5);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 30px;
+}
+
+.third:hover {
+  transform: scale(1.5);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 30px;
+}
+
+.fourth:hover {
+  transform: scale(1.5);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 30px;
+}
+
+.fifth:hover {
+  transform: scale(1.5);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 30px;
+}
+
+.sixth:hover {
+  transform: scale(1.5);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 30px;
+}
+
+.main {
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  border-radius: 150px;
+  padding: 24px 55px;
+  margin: 1% 17%;
+  flex-shrink: 0;
+}
