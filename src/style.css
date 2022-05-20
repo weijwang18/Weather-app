@@ -1,6 +1,6 @@
 .signature {
-  color: blue;
-  font-size: 25px;
+  color: grey;
+  font-size: 15px;
 }
 
 #current {
@@ -16,8 +16,9 @@ body {
   box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
   border-radius: 10px;
   border: 1px solid #dadde1;
-  max-width: 600px;
+  max-width: 700px;
   margin: 20px auto;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 form {
@@ -25,11 +26,12 @@ form {
 }
 
 .searchBar {
-  margin-left: 25%;
+  margin-left: 28%;
   margin-right: 0;
 }
+
 .Go {
-  margin-right: 28%;
+  margin-right: 30%;
   margin-left: 0;
   padding: 0;
 }
@@ -49,12 +51,7 @@ li {
 }
 
 #cityName {
-  font-size: 60px;
-  margin: auto;
-}
-
-.weatheremoji {
-  font-size: 50px;
+  font-size: 55px;
   margin: auto;
 }
 
@@ -63,7 +60,7 @@ li {
 }
 
 .UmbrellaOrNot {
-  font-size: 25px;
+  font-size: 20px;
   padding: 20px 0px 0px 0px;
 }
 
@@ -80,56 +77,18 @@ li {
 }
 
 #temp {
-  font-size: 40px;
+  font-size: 50px;
 }
 
-.first:hover {
-  transform: scale(1.5);
-  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
-  border-radius: 30px;
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
 }
 
-.second:hover {
-  transform: scale(1.5);
-  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
-  border-radius: 30px;
+.units .active {
+  color: black;
+  cursor: default;
 }
-
-.third:hover {
-  transform: scale(1.5);
-  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
-  border-radius: 30px;
-}
-
-.fourth:hover {
-  transform: scale(1.5);
-  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
-  border-radius: 30px;
-}
-
-.fifth:hover {
-  transform: scale(1.5);
-  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
-  border-radius: 30px;
-}
-
-.sixth:hover {
-  transform: scale(1.5);
-  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
-  border-radius: 30px;
-}
-
-.main {
-  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
-  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
-  border-radius: 150px;
-  padding: 24px 55px;
-  margin: 1% 17%;
-  flex-shrink: 0;
+.units .active:hover {
+  text-decoration: none;
 }

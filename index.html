@@ -11,12 +11,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
-      rel="stylesheet"
-    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather Project</title>
   </head>
@@ -25,12 +19,13 @@
       <div class="weatherapp">
         <form id="searchForm">
           <div class="form row">
-            <div class="searchBar col-5">
+            <div class="searchBar col-4">
               <input
                 type="text"
                 placeholder="Enter a city name"
                 class="rounded-pill form-control"
                 id="searchInput"
+                autocomplete="off"
               />
             </div>
             <div class="Go col">
@@ -43,7 +38,9 @@
         <div class="main">
           <div class="row row-cols-2">
             <div class="col" id="cityName"></div>
-            <div class="col weatheremoji">🌧️</div>
+            <div class="col weathericon">
+              <img src="" id="icon" />
+            </div>
             <div class="col">
               <ul>
                 <li>
@@ -55,8 +52,11 @@
             </div>
             <div class="col">
               <div id="description"></div>
-              <span id="temp"></span>
-              <span id="tempC">°C</span>
+              <strong id="temp"></strong>
+              <span class="units">
+                <a href="#" id="celsius-link" class="active"> °C </a>|
+                <a href="#" id="fahrenheit-link">°F</a></span
+              >
             </div>
           </div>
         </div>
@@ -65,42 +65,7 @@
           ☔️ You will most likely need an umbrella
         </div>
         <hr />
-
-        <div class="futureWeatherForecast">
-          <div class="row justify-content-center first">
-            <div class="col-3">Wed</div>
-            <div class="col-3">☁️ 1°C</div>
-          </div>
-          <div class="row justify-content-center second">
-            <div class="col-3">Thu</div>
-            <div class="col-3">☁️ 1°C</div>
-          </div>
-          <div class="row justify-content-center third">
-            <div class="col-3">Fri</div>
-            <div class="col-3">☁️ 2°C</div>
-          </div>
-          <div class="row justify-content-center fourth">
-            <div class="col-3">Sat</div>
-            <div class="col-3">☁️ 1°C</div>
-          </div>
-          <div class="row justify-content-center fifth">
-            <div class="col-3">Sun</div>
-            <div class="col-3">☁️ 3°C</div>
-          </div>
-
-          <div class="row justify-content-center sixth">
-            <div class="col-3">Mon</div>
-            <div class="col-3">☁️ 1°C</div>
-          </div>
-        </div>
-
-        <br />
         <span class="signature">Coded by Winnie</span>
-        <div>
-          <a href="https://github.com/weijwang18/Weather-app">View on GitHub</a>
-        </div>
-      </div>
-        
       </div>
     </div>
     <script src="src/index.js"></script>
