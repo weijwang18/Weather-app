@@ -53,6 +53,7 @@ li {
 #cityName {
   font-size: 55px;
   margin: auto;
+  color: #5585b5;
 }
 
 .futureWeatherForecast {
@@ -78,6 +79,7 @@ li {
 
 #temp {
   font-size: 50px;
+  color: #5585b5;
 }
 
 #celsius-link,
