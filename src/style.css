@@ -9,7 +9,7 @@
 }
 body {
   text-align: center;
-  font-family: "Amatic SC", cursive;
+  font-family: "Poppins", sans-serif;
 }
 
 .weatherapp {
@@ -93,4 +93,16 @@ li {
 }
 .units .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }
