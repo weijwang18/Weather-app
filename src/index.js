@@ -2,8 +2,17 @@ let apiKey = "2da3b808285a97f89d4570afa4ceaaf7";
 
 function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      displayWeather(response);
+      displayDateTime(response);
+    })
+    .catch((error) => {
+      alert("Invalid City Name!");
+    });
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#searchInput").value;
@@ -35,7 +44,10 @@ function getPostion(postion) {
   let latitude = postion.coords.latitude;
   let longitude = postion.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then((response) => {
+    displayWeather(response);
+    displayDateTime(response);
+  });
 }
 
 function handlePosition(event) {
@@ -46,25 +58,28 @@ function handlePosition(event) {
 let currentLocationButton = document.querySelector("#current");
 currentLocationButton.addEventListener("click", handlePosition);
 
-let now = new Date();
-let hour = now.getHours();
-let minutes = String(now.getMinutes()).padStart(2, "0");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
+function displayDateTime(response) {
+  let tz = response.data.timezone;
+  let now = new Date(new Date().getTime() + tz * 1000);
+  let hour = String(now.getUTCHours()).padStart(2, "0");
+  let minutes = String(now.getUTCMinutes()).padStart(2, "0");
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getUTCDay()];
 
-let today = document.querySelector("#today");
-today.innerHTML = `${day}  `;
+  let today = document.querySelector("#today");
+  today.innerHTML = `${day}  `;
 
-let time = document.querySelector("#time");
-time.innerHTML = `${hour}:${minutes}`;
+  let time = document.querySelector("#time");
+  time.innerHTML = `${hour}:${minutes}`;
+}
 
 function showFahrenheintTemperature(event) {
   event.preventDefault();
