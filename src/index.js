@@ -43,12 +43,12 @@ function displayForecast(response) {
          forecastDay.weather[0].icon
        }@2x.png" alt="" width="42" />
        <div class="weather-forecast-temperatures">
-         <span class="weather-forecast-temperature-max"> ${Math.round(
-           forecastDay.temp.max
-         )}° </span>
-         <span class="weather-forecast-temperature-min"> ${Math.round(
-           forecastDay.temp.min
-         )}° </span>
+         <span class="weather-forecast-temperature-max">${Math.round(
+           convertTemp(forecastDay.temp.max)
+         )}</span>°
+         <span class="weather-forecast-temperature-min">${Math.round(
+           convertTemp(forecastDay.temp.min)
+         )}</span>°
        </div>
      </div>
    `;
@@ -66,6 +66,7 @@ function getForecast(coordinates) {
 
 function displayWeather(response) {
   tempC = response.data.main.temp;
+  temp = convertTemp(tempC);
   document
     .querySelector("#icon")
     .setAttribute(
@@ -73,7 +74,7 @@ function displayWeather(response) {
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   document.querySelector("#cityName").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = Math.round(tempC);
+  document.querySelector("#temp").innerHTML = Math.round(temp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -127,18 +128,57 @@ function displayDateTime(response) {
 function showFahrenheintTemperature(event) {
   event.preventDefault();
   let temp = document.querySelector("#temp");
+  if (fahrenheintLink.classList.contains("active")) {
+    return;
+  }
   celsiuslink.classList.remove("active");
   fahrenheintLink.classList.add("active");
   let tempF = (tempC * 9) / 5 + 32;
   temp.innerHTML = Math.round(tempF);
+  let maxs = document.getElementsByClassName(
+    "weather-forecast-temperature-max"
+  );
+
+  Array.from(maxs).forEach((m) => {
+    m.innerHTML = Math.round((parseFloat(m.innerHTML) * 9) / 5 + 32);
+  });
+  let mins = document.getElementsByClassName(
+    "weather-forecast-temperature-min"
+  );
+  Array.from(mins).forEach((m) => {
+    m.innerHTML = Math.round((parseFloat(m.innerHTML) * 9) / 5 + 32);
+  });
 }
 
 function showCelsiuslinkTemperature(event) {
   event.preventDefault();
   let temp = document.querySelector("#temp");
+  if (celsiuslink.classList.contains("active")) {
+    return;
+  }
   celsiuslink.classList.add("active");
   fahrenheintLink.classList.remove("active");
   temp.innerHTML = Math.round(tempC);
+  let maxs = document.getElementsByClassName(
+    "weather-forecast-temperature-max"
+  );
+  Array.from(maxs).forEach((m) => {
+    m.innerHTML = Math.round(((parseFloat(m.innerHTML) - 32) * 5) / 9);
+  });
+  let mins = document.getElementsByClassName(
+    "weather-forecast-temperature-min"
+  );
+  Array.from(mins).forEach((m) => {
+    m.innerHTML = Math.round(((parseFloat(m.innerHTML) - 32) * 5) / 9);
+  });
+}
+
+function convertTemp(temp) {
+  let isC = celsiuslink.classList.contains("active");
+  if (isC) {
+    return temp;
+  }
+  return (temp * 9) / 5 + 32;
 }
 
 let tempC = null;
@@ -150,4 +190,3 @@ let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", showCelsiuslinkTemperature);
 
 search("Seattle");
-displayForecast();
