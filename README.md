@@ -1,8 +1,8 @@
-# Super Galactic Age Calculator
+# Weather app
 
 #### By **Winnie Wang**
 
-(View the page here](https://sparkly-horse-bbb8f5.netlify.app/)
+[View the page here](https://sparkly-horse-bbb8f5.netlify.app/)
 
 ## Technologies Used
 
